@@ -8,6 +8,11 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
+define('SHW_THEME_ROOT', get_template_directory_uri());
+define('SHW_CSS_DIR', SHW_THEME_ROOT . '/css');
+define('SHW_JS_DIR', SHW_THEME_ROOT . '/js');
+define('SHW_IMG_DIR', SHW_THEME_ROOT . '/img');
+
 if ( ! function_exists( 'understrap_scripts' ) ) {
 	/**
 	 * Load theme's JavaScript and CSS sources.

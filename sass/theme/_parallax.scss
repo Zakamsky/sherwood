@@ -1,0 +1,149 @@
+.parallax{
+  position: relative;
+
+
+  &--inner,
+  &--inner_deep{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    z-index: $-z-deepground;
+    @include media(sm){
+      background-attachment: fixed;
+    }
+  }
+  &--inner_deep{
+    background-image: url('../img/parallax-bg/forest-bg-main.svg');
+  }
+  &--inner{
+    background-image: url('../img/parallax-bg/forest-bg-transparent.svg');
+  }
+  &--background__left,
+  &--background__right,
+  &--foreground_left,
+  &--foreground_right{
+    position: fixed;
+    width: 20%;
+    height: 500vh;
+    top: 0;
+  }
+  &--background__right,
+  &--foreground_right{
+    right: 0;
+  }
+  &--background__left,
+  &--foreground_left{
+    left: 0;
+  }
+  &--background__left,
+  &--background__right{
+    z-index: $-z-parallax-second-plane;
+    max-width: calc((100vw - 960px) / 2);
+    @include media(xl){
+      max-width: calc((100vw - 1140px) / 2);
+    }
+  }
+  &--foreground_left,
+  &--foreground_right{
+    opacity: 0.8;
+    z-index: $-z-foreground;
+    max-width: calc((100vw - 930px) / 2);
+    @include media(xl){
+      max-width: calc((100vw - 1110px) / 2);
+    }
+
+  }
+  &--background__left{
+    background: url('../img/parallax-bg/forest-bg-branch-left-2.svg') left 350px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-left-3.svg') left 1200px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-left-2.svg') left 1950px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-left-3.svg') left 2850px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-left-2.svg') left 3750px  no-repeat;
+  }
+  &--background__right{
+    background: url('../img/parallax-bg/forest-bg-branch-right-3.svg') right 550px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-right-2.svg') right 1650px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-right-3.svg') right 2150px  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-right-2.svg') right 3050px  no-repeat;
+  }
+  &--foreground_left{
+    background: url('../img/parallax-bg/forest-bg-branch-left.svg') left 100vh  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-left-3.svg') left 300vh  no-repeat;
+  }
+  &--foreground_right{
+    background: url('../img/parallax-bg/forest-bg-branch-right.svg') right 200vh  no-repeat,
+                url('../img/parallax-bg/forest-bg-branch-right-3.svg') right 400vh  no-repeat;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//.parallax{
+//  position: relative;
+//  height: 100vh;
+//  width: 100vw;
+//  overflow-x: hidden;
+//  overflow-y: auto;
+//  perspective: 1px;
+//  //z-index: $-z-html-body;
+//  background: transparent;
+//  transform-style: preserve-3d;
+//  perspective-origin: top center;
+//  perspective-origin-y: center;
+//  perspective-origin-x: 100%;
+//  -webkit-perspective-origin-x: 100%;
+//
+//  &--inner {
+//    width: 100vw;
+//    position: relative;
+//    transform-style: preserve-3d;
+//    transform: translateZ(0);
+//
+//  }
+//  &--background,
+//  &--background__deep{
+//    content: " ";
+//    position: absolute;
+//    top: 0;
+//    right: 0;
+//    bottom: 0;
+//    left: 0;
+//    transform-origin: top center;
+//    transform-origin-x: 100%;
+//    -webkit-transform-origin-x: 100%;
+//    background-size: 100% auto;
+//    background-position: top center;
+//    background-repeat: repeat-y;
+//  }
+//  &--background__deep{
+//    background-image: url('../img/parallax-bg/forest-bg-main.svg');
+//    transform: translateZ(-2px) scale(3);
+//    transform: translateZ(-1px) scale(2);
+//    z-index: $-z-parallax-second-plane;
+//  }
+//  &--background{
+//    transform: translateZ(-1px) scale(2);
+//    transform: translateZ(-0.5px) scale(1.5);
+//    background-image: url('../img/parallax-bg/forest-bg-transparent.svg');
+//    z-index: $-z-parallax-first-plane;
+//  }
+//}
+

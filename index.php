@@ -25,16 +25,59 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="index-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="scroll_wrap <?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
+		<div class="row scroll_row">
+
+            <!--<div class="col-12">
+                <ul class="advantages nav flex-column flex-sm-row nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="btn btn-success nav-link active" id="first-tab" data-toggle="tab" href="#first" role="tab"
+                           aria-controls="first" aria-selected="true">
+                            first
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-success nav-link" id="second-tab" data-toggle="tab" href="#second" role="tab"
+                           aria-controls="second" aria-selected="false">
+                            second
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-success nav-link" id="third-tab" data-toggle="tab" href="#third" role="tab"
+                           aria-controls="third" aria-selected="false">
+                            third
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="first" role="tabpanel" aria-labelledby="first-tab">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur consequuntur corporis eligendi
+                        hic impedit ipsam labore magnam natus omnis provident quae quo, reprehenderit sapiente tempora totam
+                        vitae voluptates? Deserunt facere libero minima minus veniam! Commodi culpa, debitis eos fugiat
+                        ipsam itaque laborum maxime minima officiis pariatur quidem, velit voluptas, voluptate....
+                    </div>
+                    <div class="tab-pane fade" id="second" role="tabpanel" aria-labelledby="second-tab">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus delectus dolores eius facilis
+                        incidunt molestiae nesciunt nihil officiis qui quibusdam quidem quod, similique ut? Accusantium
+                        asperiores assumenda beatae debitis dolor exercitationem id, in laudantium neque nobis obcaecati
+                        officiis provident quaerat quasi saepe sunt totam ut voluptates. Alias earum repellat vel....
+                    </div>
+                    <div class="tab-pane fade" id="third" role="tabpanel" aria-labelledby="third-tab">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A alias aperiam eveniet facilis fugiat,
+                        ipsam iure nemo nisi qui sapiente sint veritatis. Ab consequuntur deleniti dolores iure labore
+                        maxime nemo odit qui, quos reprehenderit totam unde velit? Ab ad aperiam ea exercitationem explicabo
+                        in iure quasi sed, suscipit, vero voluptatibus....
+                    </div>
+                </div>
+            </div>-->
 
 			<!-- Do the left sidebar check and opens the primary div -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
 
 			<main class="site-main" id="main">
-
-				<?php if ( have_posts() ) : ?>
+                <div class="row">
+				    <?php if ( have_posts() ) : ?>
 
 					<?php /* Start the Loop */ ?>
 
@@ -57,7 +100,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<?php get_template_part( 'loop-templates/content', 'none' ); ?>
 
 				<?php endif; ?>
-
+                </div>
 			</main><!-- #main -->
 
 			<!-- The pagination component -->

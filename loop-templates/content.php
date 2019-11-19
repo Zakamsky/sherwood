@@ -7,50 +7,52 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
+
+
 ?>
+<div class="post_card col-md-6">
+    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+        <!--    content.php      -->
+        <a class="post_card--link text-warning" href="<?php echo esc_url( get_permalink() ) ?>" rel="bookmark"> <!--esc_url( get_permalink() ) )-->
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+            <header class="entry_header">
 
-	<header class="entry-header">
+                <?php if (has_post_thumbnail($post->ID)): ?>
+                    <?php echo get_the_post_thumbnail( $post->ID, 'large', array('class' => 'entry_header--bg_img') ); ?>
+                <?php else: ?>
+                    <img src="<?php echo SHW_IMG_DIR; ?>/post_blank.jpg " alt="header background" class="entry_header--bg_img">
+                <?php endif; ?>
 
-		<?php
-		the_title(
-			sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ),
-			'</a></h2>'
-		);
-		?>
+                <?php the_title( '<h2 class="entry_header--title text-decoration-none">', '</h2>' ); ?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+            </header><!-- .entry-header -->
+        </a>
+        <?php if ( 'post' == get_post_type() ) : ?>
+            <div class="entry-meta d-flex justify-content-between">
+                <span>
+                    <?php understrap_posted_on(); ?>
+                </span>
+                <span>
+                    <?php understrap_entry_footer(); ?>
+                </span>
 
-			<div class="entry-meta">
-				<?php understrap_posted_on(); ?>
-			</div><!-- .entry-meta -->
+            </div><!-- .entry-meta -->
+        <?php endif; ?>
 
-		<?php endif; ?>
+        <div class="entry-content">
 
-	</header><!-- .entry-header -->
+            <?php the_excerpt(); ?>
 
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
+            <?php
+            wp_link_pages(
+                array(
+                    'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
+                    'after'  => '</div>',
+                )
+            );
+            ?>
 
-	<div class="entry-content">
+        </div><!-- .entry-content -->
 
-		<?php the_excerpt(); ?>
-
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'understrap' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-
-		<?php understrap_entry_footer(); ?>
-
-	</footer><!-- .entry-footer -->
-
-</article><!-- #post-## -->
+    </article><!-- #post-## -->
+</div>

@@ -1,6 +1,120 @@
-// Use this file to overwrite the basic Bootstrap variables and add your own variables
-// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
-// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+// colors:
+$-c-yellow: #ffe3ba; //rgb(255, 227, 186) in svg ..navbar-toggler-icon use direct color
+$-c-green: #094F0D;
+$-c-green-dark: #0e2c09;
 
+$-c-scroll-light: #ecd8aa;
+$-c-scroll-dark: #5C2E00;
+$-c-scroll-dark-shadow: #392900;
 
-$primary: #5533ff; // Thats a sample how you could change a BootStrap variable.
+// z-indexes:
+$-z-foreground: +5;
+$-z-base: 0;
+$-z-scroll-bg-top-and-bottom: -5;
+$-z-scroll-bg-main: -6;
+$-z-parallax-first-plane: -10;
+$-z-parallax-second-plane: -15;
+$-z-deepground: -20;
+$-z-html-body: -25;
+
+//$zindex-dropdown:                   1000 !default;
+//$zindex-sticky:                     1020 !default;
+//$zindex-fixed:                      1030 !default;
+//$zindex-modal-backdrop:             1040 !default;
+//$zindex-modal:                      1050 !default;
+//$zindex-popover:                    1060 !default;
+//$zindex-tooltip:                    1070 !default;
+
+// scroll bg:
+$-scroll-relative-height: 12.8%;
+
+$-scr-main-margin-Y: 2em;
+$-scr-pseudo-transparent-border-compensation: -1.5em;
+$-scr-inner-paddind: 3em;
+
+//bootstrap-4:
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+                (
+                        "100": $gray-100,
+                        "200": $gray-200,
+                        "300": $gray-300,
+                        "400": $gray-400,
+                        "500": $gray-500,
+                        "600": $gray-600,
+                        "700": $gray-700,
+                        "800": $gray-800,
+                        "900": $gray-900
+                ),
+                $grays
+);
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  $-c-yellow; //#ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+                (
+                        "blue":       $blue,
+                        "indigo":     $indigo,
+                        "purple":     $purple,
+                        "pink":       $pink,
+                        "red":        $red,
+                        "orange":     $orange,
+                        "yellow":     $yellow,
+                        "green":      $green,
+                        "teal":       $teal,
+                        "cyan":       $cyan,
+                        "white":      $white,
+                        "gray":       $gray-600,
+                        "gray-dark":  $gray-800
+                ),
+                $colors
+);
+
+$primary:       $-c-green; // !default;
+$secondary:     $-c-scroll-dark; //$gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $-c-green-dark; //$gray-800 !default;
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+                (
+                        "primary":    $primary,
+                        "secondary":  $secondary,
+                        "success":    $success,
+                        "info":       $info,
+                        "warning":    $warning,
+                        "danger":     $danger,
+                        "light":      $light,
+                        "dark":       $dark
+                ),
+                $theme-colors
+);

@@ -1,0 +1,21 @@
+//media-mixin start
+$breakpoints: (
+        'sm': 576px,
+        'md': 768px,
+        'lg': 992px,
+        'xl': 1200px
+);
+
+@mixin media( $point ) {
+  @if map-has-key($breakpoints, $point) {
+    @media ( min-width: map-get($breakpoints, $point) ) {
+      @content;
+    }
+  }
+  @else {
+    @media ( min-width: $point + 'px') {
+      @content;
+    }
+  }
+}
+//media-mixin start

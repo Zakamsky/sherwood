@@ -1,1 +1,98 @@
-// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+html, body{
+  min-height: 100%;
+  padding: 0;
+}
+body{
+  background: rgb(9, 79, 13);
+  overflow-x: hidden;
+}
+#page{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+#wrapper-footer{
+  margin-top: auto;
+}
+/*navigation*/
+.phones--item{
+  text-align: center;
+}
+.nav-link{
+  border-bottom: 1px solid transparent;
+  transition: all 0.6s;
+}
+.nav-item:hover .nav-link,
+.nav-item:active .nav-link,
+.nav-item.active .nav-link{
+  border-color: $-c-yellow;
+}
+.navbar-toggler{
+  color: rgba($warning,0.6);
+  border: 0.5px solid currentColor;
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 227, 186, 0.6)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+}
+.navbar-nav .dropdown-menu{
+  background: rgba($primary, 0.6);
+}
+.dropdown-item:focus, .dropdown-item:hover{
+  background-color: rgba($dark, 0.6);
+}
+/*navigation end*/
+
+/*advantages start*/
+.advantages{
+  width: 100%;
+}
+/*advantages end*/
+/* post listing start*/
+.post_card{
+  article.post{
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+  &--link{
+    display: block;
+    text-decoration: none;
+  }
+  .entry_header{
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    &::before{
+      position: absolute;
+      content: '';
+      top: 50%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(to top, rgba(#000, 0.6), transparent);
+      z-index: 1;
+
+    }
+    &--bg_img{
+      position: relative;
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+      max-width: unset;
+    }
+    &--title{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      margin: 0;
+      padding: 1em;
+      z-index: 1;
+    }
+  }
+  &.col-md-4{
+    .entry_header{
+      height: 230px;
+    }
+  }
+}
+/* post listing end */

@@ -1,0 +1,44 @@
+/*scroll start*/
+.scroll_wrap{
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+
+  .scroll_row {
+    padding: $-scroll-relative-height 10px;
+    //padding-top: $-scroll-relative-height;
+    //padding-bottom: $-scroll-relative-height;
+    //padding-left: 10px;
+    //padding-right: 10px;
+    background-image: url("../img/scroll-center.svg");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+  }
+  &::before, &::after{
+    content: '';
+    display: block;
+    position: absolute;
+    overflow: visible;
+    left: 0;
+    right: 0;
+    padding-top: $-scroll-relative-height;
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    transform: scale(1.1);
+  }
+  &::before{
+    top: -1em;
+    background-image: url("../img/scroll-top.svg");
+    filter: drop-shadow(0 1rem 0.8rem rgba($-c-scroll-dark-shadow, 0.6));
+  }
+  &::after{
+    bottom: -1em;
+    background-image: url("../img/scroll-bottom.svg");
+    background-position: center bottom;
+  }
+}
+/*scroll end*/

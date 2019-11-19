@@ -16,9 +16,9 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="author-wrapper">
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
+	<div class="<?php echo esc_attr( $container ); ?> scroll_wrap" id="content" tabindex="-1">
 
-		<div class="row">
+		<div class="row scroll_row">
 
 			<!-- Do the left sidebar check -->
 			<?php get_template_part( 'global-templates/left-sidebar-check' ); ?>
