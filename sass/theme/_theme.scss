@@ -45,6 +45,13 @@ body{
 /*advantages start*/
 .advantages{
   width: 100%;
+  &.nav{
+	gap: 12px;
+	flex-direction: column;
+	@include media(sm){
+	  flex-direction: row;
+	}
+  }
 }
 /*advantages end*/
 /* post listing start*/
@@ -96,3 +103,16 @@ body{
   }
 }
 /* post listing end */
+
+.super-title{
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  font-weight: 300;
+  line-height: 1.2;
+  @include media(md){
+	font-size: 3rem;
+  }
+  @include media(lg){
+  	font-size: 3.5rem;
+  }
+}

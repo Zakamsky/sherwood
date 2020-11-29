@@ -41,7 +41,7 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md order-md-last">
+		<nav class="navbar navbar-expand-lg order-lg-last">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container">
@@ -119,19 +119,23 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
 
         <div class="container">
             <div class="row align-items-center">
+				<?php if ( is_front_page() ) : ?>
+					<h2 class="super-title text-center text-warning col-12 mt-4">Центр стрельбы из лука</h2>
+				<?php endif; ?>
+
                 <div class="col-md-4">
                     <!-- Your site title as branding in the menu -->
                     <?php if ( ! has_custom_logo() ) { ?>
 
-                    <?php if ( is_front_page() && is_home() ) : ?>
+						<?php if ( is_front_page() && is_home() ) : ?>
 
-                        <h1 class=""><a class="text-warning" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+							<h1 class=""><a class="text-warning" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
 
-                    <?php else : ?>
+						<?php else : ?>
 
-                        <a class="text-warning" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
+							<a class="text-warning" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
-                    <?php endif; ?>
+						<?php endif; ?>
 
 
                     <?php } else {
@@ -175,5 +179,3 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
 
 
 	</div><!-- #wrapper-navbar end -->
-
-
