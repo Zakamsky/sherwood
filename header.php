@@ -120,7 +120,9 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
         <div class="container">
             <section class="row align-items-center">
 				<?php if ( is_front_page() || is_home() ) : ?>
-					<h2 class="super-title text-center text-warning col-12">Центр стрельбы из лука</h2>
+					<h2 class="super-title text-center text-warning col-12">
+						<?php echo get_bloginfo('description'); ?>
+					</h2>
 				<?php endif; ?>
 
                 <div class="col-md-4">

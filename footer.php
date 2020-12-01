@@ -11,6 +11,13 @@
 defined( 'ABSPATH' ) || exit;
 
 $container = get_theme_mod( 'understrap_container_type' );
+
+$phone1 = get_field( 'telefon', 5 );
+$phone2 = get_field( 'telefon_2', 5 );
+$pattern = "/[^0-9]/";
+$replacement = "";
+$phone_num1 = preg_replace($pattern, $replacement, $phone1);
+$phone_num2 = preg_replace($pattern, $replacement, $phone2);
 ?>
 
 <?php get_template_part( 'sidebar-templates/sidebar', 'footerfull' ); ?>
@@ -18,6 +25,46 @@ $container = get_theme_mod( 'understrap_container_type' );
 <div class="wrapper bg-dark" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">
+		<div class="row">
+			<div class="col-lg-2 d-none d-lg-block">
+				<!-- Your site title as branding in the menu -->
+				<?php if ( has_custom_logo() ) {
+					the_custom_logo();
+				} ?><!-- end custom logo -->
+			</div>
+			<div class="col-md-6 phones py-4">
+
+				<a href="tel:+<?php echo $phone_num1 ?>" class="phones--item text-warning h4 d-block">
+					<?php echo $phone1 ?>
+				</a>
+
+				<a href="tel:+<?php echo $phone_num2 ?>" class="phones--item text-warning h4 d-block">
+					<?php echo $phone2 ?>
+				</a>
+			</div>
+			<address class="col-6 col-md-3 col-lg-2 address text-warning py-4">
+				<h6 class="title"><?php the_field( 'addres_title', 5 ); ?></h6>
+				<p>
+					<?php the_field( 'city', 5 ); ?>
+				</p>
+				<p>
+					<?php the_field( 'addres', 5 ); ?>
+				</p>
+			</address>
+			<div class="col-6 col-md-3 col-lg-2 address text-warning text-right text-md-left py-4">
+				<h6 class="title">
+					<?php the_field( 'hours_title', 5 ); ?>
+				</h6>
+				<p>
+					<?php the_field( 'hours', 5 ); ?>
+				</p>
+				<p>
+					<?php the_field( 'break_title', 5 ); ?>
+					</br>
+					<?php the_field( 'break', 5 ); ?>
+				</p>
+			</div>
+		</div>
 
 		<div class="row">
 
