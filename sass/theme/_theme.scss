@@ -15,6 +15,14 @@ body{
   margin-top: auto;
 }
 /*navigation*/
+
+.navbar.navbar-expand-lg{
+  @include media(lg){
+	margin-top: 1.5rem;
+	border-top: 1px solid $warning;
+	border-bottom: 1px solid $warning;
+  }
+}
 .phones--item{
   text-align: center;
 }

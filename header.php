@@ -118,9 +118,9 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
 		</nav><!-- .site-navigation -->
 
         <div class="container">
-            <div class="row align-items-center">
-				<?php if ( is_front_page() ) : ?>
-					<h2 class="super-title text-center text-warning col-12 mt-4">Центр стрельбы из лука</h2>
+            <section class="row align-items-center">
+				<?php if ( is_front_page() || is_home() ) : ?>
+					<h2 class="super-title text-center text-warning col-12">Центр стрельбы из лука</h2>
 				<?php endif; ?>
 
                 <div class="col-md-4">
@@ -152,7 +152,7 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
                         <?php echo $phone2 ?>
                     </a>
                 </div>
-                <div class="col-6 col-md-2 address text-warning d-none d-lg-block py-4">
+                <address class="col-6 col-md-2 address text-warning d-none d-lg-block py-4">
                     <h6 class="title"><?php the_field( 'addres_title', 5 ); ?></h6>
                     <p>
                         <?php the_field( 'city', 5 ); ?>
@@ -160,7 +160,7 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
                     <p>
                         <?php the_field( 'addres', 5 ); ?>
                     </p>
-                </div>
+                </address>
                 <div class="col-6 col-md-2 address text-warning d-none d-lg-block py-4">
                     <h6 class="title">
                         <?php the_field( 'hours_title', 5 ); ?>
@@ -174,7 +174,161 @@ $phone_num2 = preg_replace($pattern, $replacement, $phone2);
                         <?php the_field( 'break', 5 ); ?>
                     </p>
                 </div>
-            </div>
+            </section>
+			<?php if ( is_front_page() ||  is_home()) : ?>
+<!--				<div class="row justify-content-even">-->
+				<div class="brand-block">
+<!--					<section class="brand-block__item  border border-warning rounded">-->
+<!--						<a href="https://vk.com/archery_74" class="brand-block__link d-block" >-->
+<!--							<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+<!--							<h2 class="brand-block__title">Спортивная секция</h2>-->
+<!--							<p class="brand-block__text">-->
+<!--								Если Вы ищете хорошую секцию для своего ребенка или ребенок сам хочет заняться чем-то интересным - Стрельба из лука это ВЕРНЫЙ выбор!👍🏻-->
+<!--							</p>-->
+<!--						</a>-->
+<!--					</section>-->
+<!--					<section class="brand-block__item border border-warning rounded">-->
+<!--						<a href="https://vk.com/archery_74" class="brand-block__link d-block" >-->
+<!--							<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+<!--							<h2 class="brand-block__title">Спортивная секция</h2>-->
+<!--							<p class="brand-block__text">-->
+<!--								Если Вы ищете хорошую секцию для своего ребенка или ребенок сам хочет заняться чем-то интересным - Стрельба из лука это ВЕРНЫЙ выбор!👍🏻-->
+<!--							</p>-->
+<!--						</a>-->
+<!--					</section>-->
+<!---->
+<!--					<section class="brand-block__item border border-warning rounded">-->
+<!--						<a href="https://vk.com/archery_74" class="brand-block__link d-block" >-->
+<!--							<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+<!--							<h2 class="brand-block__title">Спортивная секция</h2>-->
+<!--							<p class="brand-block__text">-->
+<!--								Если Вы ищете хорошую секцию для своего ребенка или ребенок сам хочет заняться чем-то интересным - Стрельба из лука это ВЕРНЫЙ выбор!👍🏻-->
+<!--							</p>-->
+<!--						</a>-->
+<!--					</section>-->
+<!--					<section class="brand-block__item border border-warning rounded">-->
+<!--						<a href="https://vk.com/archery_74" class="brand-block__link d-block" >-->
+<!--							<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+<!--							<h2 class="brand-block__title">Спортивная секция</h2>-->
+<!--							<p class="brand-block__text">-->
+<!--								Если Вы ищете хорошую секцию для своего ребенка или ребенок сам хочет заняться чем-то интересным - Стрельба из лука это ВЕРНЫЙ выбор!👍🏻-->
+<!--							</p>-->
+<!--						</a>-->
+<!--					</section>-->
+<!--test aqui-->
+					<?php if ( have_rows( 'section-1', 'option' ) ) : ?>
+						<?php while ( have_rows( 'section-1', 'option' ) ) : the_row(); ?>
+
+							<?php $url = get_sub_field( 'url' ); ?>
+							<section class="brand-block__item <?php if ( get_sub_field( 'main' ) ) echo 'brand-block__item--main'; ?> border border-warning rounded">
+								<a href="<?php if ( $url ) echo $url; ?>" class="brand-block__link" >
+									<?php $img = get_sub_field( 'img' ); ?>
+									<?php if ( $img ) { ?>
+
+										<?php echo wp_get_attachment_image( $img, 'medium', false, ['class' => 'brand-block__img'] ); ?>
+									<?php } ?>
+									<!--									<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+									<h2 class="brand-block__title">
+										<?php the_sub_field( 'title' ); ?>
+									</h2>
+									<p class="brand-block__text">
+										<?php the_sub_field( 'description' ); ?>
+									</p>
+								</a>
+							</section>
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'section-2', 'option' ) ) : ?>
+						<?php while ( have_rows( 'section-2', 'option' ) ) : the_row(); ?>
+
+							<?php $url = get_sub_field( 'url' ); ?>
+							<section class="brand-block__item <?php if ( get_sub_field( 'main' ) ) echo 'brand-block__item--main'; ?> border border-warning rounded">
+								<a href="<?php if ( $url ) echo $url; ?>" class="brand-block__link" >
+									<?php $img = get_sub_field( 'img' ); ?>
+									<?php if ( $img ) { ?>
+
+										<?php echo wp_get_attachment_image( $img, 'medium', false, ['class' => 'brand-block__img'] ); ?>
+									<?php } ?>
+									<!--									<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+									<h2 class="brand-block__title">
+										<?php the_sub_field( 'title' ); ?>
+									</h2>
+									<p class="brand-block__text">
+										<?php the_sub_field( 'description' ); ?>
+									</p>
+								</a>
+							</section>
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'section-3', 'option' ) ) : ?>
+						<?php while ( have_rows( 'section-3', 'option' ) ) : the_row(); ?>
+
+							<?php $url = get_sub_field( 'url' ); ?>
+							<section class="brand-block__item <?php if ( get_sub_field( 'main' ) ) echo 'brand-block__item--main'; ?> border border-warning rounded">
+								<a href="<?php if ( $url ) echo $url; ?>" class="brand-block__link" >
+									<?php $img = get_sub_field( 'img' ); ?>
+									<?php if ( $img ) { ?>
+
+										<?php echo wp_get_attachment_image( $img, 'medium', false, ['class' => 'brand-block__img'] ); ?>
+									<?php } ?>
+									<!--									<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+									<h2 class="brand-block__title">
+										<?php the_sub_field( 'title' ); ?>
+									</h2>
+									<p class="brand-block__text">
+										<?php the_sub_field( 'description' ); ?>
+									</p>
+								</a>
+							</section>
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'section-4', 'option' ) ) : ?>
+						<?php while ( have_rows( 'section-4', 'option' ) ) : the_row(); ?>
+
+							<?php $url = get_sub_field( 'url' ); ?>
+							<section class="brand-block__item <?php if ( get_sub_field( 'main' ) ) echo 'brand-block__item--main'; ?> border border-warning rounded">
+								<a href="<?php if ( $url ) echo $url; ?>" class="brand-block__link" >
+									<?php $img = get_sub_field( 'img' ); ?>
+									<?php if ( $img ) { ?>
+
+										<?php echo wp_get_attachment_image( $img, 'medium', false, ['class' => 'brand-block__img'] ); ?>
+									<?php } ?>
+									<!--									<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+									<h2 class="brand-block__title">
+										<?php the_sub_field( 'title' ); ?>
+									</h2>
+									<p class="brand-block__text">
+										<?php the_sub_field( 'description' ); ?>
+									</p>
+								</a>
+							</section>
+						<?php endwhile; ?>
+					<?php endif; ?>
+					<?php if ( have_rows( 'section-5', 'option' ) ) : ?>
+						<?php while ( have_rows( 'section-5', 'option' ) ) : the_row(); ?>
+
+							<?php $url = get_sub_field( 'url' ); ?>
+							<section class="brand-block__item <?php if ( get_sub_field( 'main' ) ) echo 'brand-block__item--main'; ?> border border-warning rounded">
+								<a href="<?php if ( $url ) echo $url; ?>" class="brand-block__link" >
+									<?php $img = get_sub_field( 'img' ); ?>
+									<?php if ( $img ) { ?>
+
+										<?php echo wp_get_attachment_image( $img, 'medium', false, ['class' => 'brand-block__img'] ); ?>
+									<?php } ?>
+									<!--									<img src="https://placekitten.com/300/300" alt="" class="brand-block__img">-->
+									<h2 class="brand-block__title">
+										<?php the_sub_field( 'title' ); ?>
+									</h2>
+									<p class="brand-block__text">
+										<?php the_sub_field( 'description' ); ?>
+									</p>
+								</a>
+							</section>
+						<?php endwhile; ?>
+					<?php endif; ?>
+<!--test aqui-->
+				</div>
+			<?php endif; ?>
         </div>
 
 

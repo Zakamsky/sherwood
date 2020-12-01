@@ -4,6 +4,7 @@
   "description": "WordPress Theme framework",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
     "postinstall": "gulp copy-assets"
   },
   "engines": {
